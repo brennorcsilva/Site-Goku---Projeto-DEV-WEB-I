@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.espaco-entre{
+    margin-top: 20px;
+}
+
+.tamanho-produto{
+    max-width: 225px;
+    max-height: 300px;
+}
+
+#cartModal .modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}

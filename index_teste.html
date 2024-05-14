@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon Ball Z TESTE</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Dragon Ball Z Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="loginBtn">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="signupBtn">Cadastro</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="cartBtn">Carrinho</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
+
+    <!-- Página principal -->
+    <div class="container mt-5">
+    <div class="row" id="productList">
+        <!-- Products will be dynamically added here -->
+    </div>
+    </div>
+
+    <div class="container" style="display: flex; flex-direction: row;"> 
+
+        <!-- Login Modal -->
+        <div class="col-md-6">
+            <h2>Cadastro</h2>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="cadastroNome">Nome</label>
+                    <input type="text" class="form-control" id="cadastroNome" required>
+                </div>
+                <div class="form-group">
+                    <label for="cadastroEmail">Email</label>
+                    <input type="email" class="form-control" id="cadastroEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="cadastroSenha">Senha</label>
+                    <input type="password" class="form-control" id="cadastroSenha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+        
+        <!-- Cadastro -->
+        <div class="col-md-6">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" class="form-control" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginSenha">Senha</label>
+                    <input type="password" class="form-control" id="loginSenha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Carrinho -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <ul id="cartItems" class="list-group">
+                <!-- Items will be dynamically added here -->
+            </ul>
+            <p id="cartTotal" class="font-weight-bold">Total: R$ 0,00</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Finalizar Compra</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+    <!-- Cards -->
+    <div class="container">
+
+        <div class="row espaco-entre">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/camiseta goku.png" class="card-img-top tamanho-produto" alt="Camiseta">
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Goku</h5>
+                        <p class="card-text">Camiseta imitação do Kimono do Goku</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">R$ 59,90</small>
+                            <button class="btn btn-sm btn-outline-primary" onclick="adicionarAoCarrinho('Camiseta', 59.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/mochila goku.webp" class="card-img-top tamanho-produto" alt="Mochila">
+                    <div class="card-body">
+                        <h5 class="card-title">Mochila Goku</h5>
+                        <p class="card-text">Mochila escolar temática do Goku</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">R$ 175,90</small>
+                            <button class="btn btn-sm btn-outline-primary" onclick="adicionarAoCarrinho('Mochila', 175.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/Action Figure.webp" class="card-img-top tamanho-produto" alt="Action Figure">
+                    <div class="card-body">
+                        <h5 class="card-title">Action Figure Goku</h5>
+                        <p class="card-text">Boneco de ação do Goku</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">R$ 189,90</small>
+                            <button class="btn btn-sm btn-outline-primary" onclick="adicionarAoCarrinho('Action Figure', 189.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/caderno goku.jpg" class="card-img-top tamanho-produto" alt="Caderno">
+                    <div class="card-body">
+                        <h5 class="card-title">Caderno Goku</h5>
+                        <p class="card-text">Cardeno escolar temático do Goku</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">R$ 31,90</small>
+                            <button class="btn btn-sm btn-outline-primary" onclick="adicionarAoCarrinho('Caderno', 31.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/chinelo goku.jpg" class="card-img-top tamanho-produto" alt="Chinelo">
+                    <div class="card-body">
+                        <h5 class="card-title">Chinelo Goku</h5>
+                        <p class="card-text">Chinelo temático do Goku</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">R$ 33,90</small>
+                            <button class="btn btn-sm btn-outline-primary" onclick="adicionarAoCarrinho('Chinelo', 33.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="/img/fantasia goku.webp" class="card-img-top tamanho-produto" alt="Action Figure">
+                    <div class="card-body">
+                        <h5 class="card-title">Action Figure Vegeta</h5>
+                        <p class="card-text">Boneco de ação do Vegeta</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">R$ 189,90</small>
+                            <button class="btn btn-sm btn-outline-primary" onclick="adicionarAoCarrinho('Action Figure', 189.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
