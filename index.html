@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Cadastro</h2>
+                <form id="cadastroForm">
+                    <div class="form-group">
+                        <label for="cadastroNome">Nome</label>
+                        <input type="text" class="form-control" id="cadastroNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastroEmail">Email</label>
+                        <input type="email" class="form-control" id="cadastroEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cadastroSenha">Senha</label>
+                        <input type="password" class="form-control" id="cadastroSenha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginSenha">Senha</label>
+                        <input type="password" class="form-control" id="loginSenha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
